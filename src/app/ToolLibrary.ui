@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>ToolLibrary</class>
+ <widget class="QWidget" name="ToolLibrary">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>325</width>
+    <height>657</height>
+   </rect>
+  </property>
+  <property name="sizePolicy">
+   <sizepolicy hsizetype="Ignored" vsizetype="Preferred">
+    <horstretch>0</horstretch>
+    <verstretch>0</verstretch>
+   </sizepolicy>
+  </property>
+  <property name="windowTitle">
+   <string>Tool Library</string>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout_2">
+   <item>
+    <widget class="QLineEdit" name="searchBar"/>
+   </item>
+   <item>
+    <widget class="tomo::ToolLibraryTree" name="libraryTree"/>
+   </item>
+   <item>
+    <widget class="tomo::widget::ToolPreview" name="toolPreview">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="minimumSize">
+      <size>
+       <width>0</width>
+       <height>128</height>
+      </size>
+     </property>
+     <property name="maximumSize">
+      <size>
+       <width>16777215</width>
+       <height>128</height>
+      </size>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QLabel" name="toolDescription">
+     <property name="text">
+      <string/>
+     </property>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>tomo::ToolLibraryTree</class>
+   <extends>QTreeView</extends>
+   <header>widget/ToolLibraryTree.h</header>
+  </customwidget>
+  <customwidget>
+   <class>tomo::widget::ToolPreview</class>
+   <extends>QGraphicsView</extends>
+   <header>widget/ToolPreview.h</header>
+  </customwidget>
+ </customwidgets>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>searchBar</sender>
+   <signal>textChanged(QString)</signal>
+   <receiver>ToolLibrary</receiver>
+   <slot>updateItems()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>180</x>
+     <y>23</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>180</x>
+     <y>223</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>libraryTree</sender>
+   <signal>activated(QModelIndex)</signal>
+   <receiver>ToolLibrary</receiver>
+   <slot>selectionChanged()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>162</x>
+     <y>186</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>162</x>
+     <y>328</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>libraryTree</sender>
+   <signal>clicked(QModelIndex)</signal>
+   <receiver>ToolLibrary</receiver>
+   <slot>selectionChanged()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>162</x>
+     <y>186</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>162</x>
+     <y>328</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+ <slots>
+  <slot>updateItems()</slot>
+  <slot>selectionChanged()</slot>
+ </slots>
+</ui>

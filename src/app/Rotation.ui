@@ -1,0 +1,287 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Rotation</class>
+ <widget class="QWidget" name="Rotation">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>325</width>
+    <height>153</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <layout class="QGridLayout" name="gridLayout">
+   <property name="margin">
+    <number>4</number>
+   </property>
+   <property name="spacing">
+    <number>1</number>
+   </property>
+   <item row="2" column="2">
+    <widget class="QDoubleSpinBox" name="boxZ">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="minimum">
+      <double>-360.000000000000000</double>
+     </property>
+     <property name="maximum">
+      <double>360.000000000000000</double>
+     </property>
+    </widget>
+   </item>
+   <item row="0" column="2">
+    <widget class="QDoubleSpinBox" name="boxX">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="minimum">
+      <double>-360.000000000000000</double>
+     </property>
+     <property name="maximum">
+      <double>360.000000000000000</double>
+     </property>
+    </widget>
+   </item>
+   <item row="1" column="2">
+    <widget class="QDoubleSpinBox" name="boxY">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="minimum">
+      <double>-360.000000000000000</double>
+     </property>
+     <property name="maximum">
+      <double>360.000000000000000</double>
+     </property>
+    </widget>
+   </item>
+   <item row="0" column="1">
+    <widget class="QSlider" name="sliderX">
+     <property name="minimum">
+      <number>-360</number>
+     </property>
+     <property name="maximum">
+      <number>360</number>
+     </property>
+     <property name="singleStep">
+      <number>15</number>
+     </property>
+     <property name="pageStep">
+      <number>45</number>
+     </property>
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+     <property name="invertedControls">
+      <bool>false</bool>
+     </property>
+     <property name="tickPosition">
+      <enum>QSlider::TicksAbove</enum>
+     </property>
+     <property name="tickInterval">
+      <number>90</number>
+     </property>
+    </widget>
+   </item>
+   <item row="1" column="1">
+    <widget class="QSlider" name="sliderY">
+     <property name="minimum">
+      <number>-360</number>
+     </property>
+     <property name="maximum">
+      <number>360</number>
+     </property>
+     <property name="singleStep">
+      <number>15</number>
+     </property>
+     <property name="pageStep">
+      <number>45</number>
+     </property>
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+     <property name="invertedControls">
+      <bool>false</bool>
+     </property>
+     <property name="tickPosition">
+      <enum>QSlider::NoTicks</enum>
+     </property>
+     <property name="tickInterval">
+      <number>90</number>
+     </property>
+    </widget>
+   </item>
+   <item row="2" column="1">
+    <widget class="QSlider" name="sliderZ">
+     <property name="minimum">
+      <number>-360</number>
+     </property>
+     <property name="maximum">
+      <number>360</number>
+     </property>
+     <property name="singleStep">
+      <number>15</number>
+     </property>
+     <property name="pageStep">
+      <number>45</number>
+     </property>
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+     <property name="invertedControls">
+      <bool>false</bool>
+     </property>
+     <property name="tickPosition">
+      <enum>QSlider::TicksBelow</enum>
+     </property>
+     <property name="tickInterval">
+      <number>90</number>
+     </property>
+    </widget>
+   </item>
+   <item row="0" column="0">
+    <widget class="QLabel" name="labelX">
+     <property name="text">
+      <string>X</string>
+     </property>
+    </widget>
+   </item>
+   <item row="1" column="0">
+    <widget class="QLabel" name="labelY">
+     <property name="text">
+      <string>Y</string>
+     </property>
+    </widget>
+   </item>
+   <item row="2" column="0">
+    <widget class="QLabel" name="labelZ">
+     <property name="text">
+      <string>Z</string>
+     </property>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>boxX</sender>
+   <signal>valueChanged(double)</signal>
+   <receiver>Rotation</receiver>
+   <slot>boxXChanged()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>248</x>
+     <y>25</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>148</x>
+     <y>58</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>boxY</sender>
+   <signal>valueChanged(double)</signal>
+   <receiver>Rotation</receiver>
+   <slot>boxYChanged()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>248</x>
+     <y>58</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>148</x>
+     <y>58</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>boxZ</sender>
+   <signal>valueChanged(double)</signal>
+   <receiver>Rotation</receiver>
+   <slot>boxZChanged()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>248</x>
+     <y>90</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>148</x>
+     <y>58</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>sliderX</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>Rotation</receiver>
+   <slot>sliderXChanged()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>114</x>
+     <y>25</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>148</x>
+     <y>58</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>sliderY</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>Rotation</receiver>
+   <slot>sliderYChanged()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>114</x>
+     <y>58</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>148</x>
+     <y>58</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>sliderZ</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>Rotation</receiver>
+   <slot>sliderZChanged()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>114</x>
+     <y>90</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>148</x>
+     <y>58</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+ <slots>
+  <signal>valueChanged()</signal>
+  <slot>changeValue()</slot>
+  <slot>boxXChanged()</slot>
+  <slot>boxYChanged()</slot>
+  <slot>boxZChanged()</slot>
+  <slot>sliderXChanged()</slot>
+  <slot>sliderYChanged()</slot>
+  <slot>sliderZChanged()</slot>
+ </slots>
+</ui>

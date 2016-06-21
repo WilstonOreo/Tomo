@@ -1,0 +1,58 @@
+# use clang cause gcc is eighties
+using clang 
+  : 3.2 # version
+  : # compiler
+  : # options
+  <cxxflags>-std=c++11  # use new C++11 standard
+  <cxxflags>-ferror-limit=1 # stop at first error
+  <cxxflags>-fcolor-diagnostics # color my life
+  <cxxflags>-fdiagnostics-show-template-tree # make template diagnostics easier
+  <cxxflags>-O3
+  ;
+
+# path where we get our libraries from
+use-project /boost : ../../boost_1_52_0 ;
+
+lib RT : : <name>rt <search>/lib ;
+lib TBB : : <name>tbb <search>/usr/lib ;
+
+project
+    : requirements 
+      <include>./include
+      #libraries to use
+      <library>RT
+      <library>TBB
+      <library>/boost//system
+    : usage-requirements 
+        #include paths    
+        <include>./include
+    ;
+
+exe log_sample : 
+	samples/log.cpp  
+	$(BOOST_ROOT)//thread
+	;
+
+exe declare_property_sample :
+	samples/declare_property.cpp ;
+
+exe config_sample :
+	samples/config.cpp ;
+
+exe parameterset_sample : 
+  samples/parameterset.cpp ;
+
+exe parse_sample : 
+  samples/parse.cpp ;
+
+exe parallel_for_sample : 
+  samples/parallel_for.cpp ;
+
+exe toolchain : 
+  samples/ToolchainParser.cpp ;
+
+exe reflection_sample : 
+  samples/reflection.cpp ;
+
+exe serialization_sample : 
+  samples/simple_serialization.cpp ;
